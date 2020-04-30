@@ -1,6 +1,3 @@
-name = input("Enter file name: ")
-
-
 def name_file(name_file_def="Text.txt"):
     with open(name_file_def, "r") as file:
         list_string = file.readlines()
@@ -11,12 +8,16 @@ def name_file(name_file_def="Text.txt"):
         print(f"Total lines {i[0]}. Total words {words}")
 
 
-try:
-    if not name:
-        name_file()
-    else:
-        name_file(name)
-except FileNotFoundError:
-    print(f"No such file or directory: '{name}'")
-except IOError:
-    print("Output input error.")
+while True:
+    try:
+        name = input("Enter file name(Text.txt default): ")
+        if not name:
+            name_file()
+            break
+        else:
+            name_file(name)
+            break
+    except FileNotFoundError:
+        print(f"No such file or directory: '{name}'")
+    except IOError:
+        print("Output input error.")
