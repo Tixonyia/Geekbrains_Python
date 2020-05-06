@@ -32,7 +32,7 @@ class Costume(MyAbstractClass):
 
     def tissue_consumption(self):
         result = self.size * 2 + 0.3
-        print(f"The costume will take {round(result, 2)} meters of fabric")
+        print(f"The costume will take {round(result, 2)} meters of fabric.")
 
 
 coat_1 = Coat("coat", 13)
